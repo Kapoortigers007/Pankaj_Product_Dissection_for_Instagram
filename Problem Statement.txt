@@ -1,7 +1,8 @@
-link is here ---- https://docs.google.com/document/d/1r4isHl_cW4WfIbAsLWaiFRXRo_VtDftT/edit?usp=sharing&ouid=107332596392499470199&rtpof=true&sd=true
+link is here ---- https://docs.google.com/document/d/133iCLWkhOncDVAHkmwq5ACj9RqU3kTTS/edit?usp=sharing&ouid=105890418273853665260&rtpof=true&sd=true
+
 Problem Statement
 
-Product Dissection for top leading Platforms
+Product Dissection for the top leading Platforms
 
 Welcome to this case study on dissecting and designing products for top leading platforms. In this case study, you will delve into the intriguing world of schema design for a prominent platform of your choice. Your task is to choose a top leading platform, research its features, and meticulously craft a schema design that encapsulates the essence of its functionality. By focusing on key entities, attributes, and relationships, you will gain invaluable insights into how data architecture drives the platform's effectiveness.
 
@@ -14,11 +15,15 @@ Thoroughly research the platform you have selected. Investigate its core feature
 Step 3: Product Dissection and Real World Problems solved by the platform
 In this step, you will meticulously analyse the platform's standout features and how they provide innovative solutions to real-world challenges. By identifying key functionalities that resonate with users, you'll unravel how the platform effectively addresses problems and enhances user experiences. This dissection will serve as the foundation for understanding how the schema design aligns with the platform's core objectives.
 
-Step 4: Case Study on the real world problems and approach to solving them
+Step 4: Case Study on the real-world problems and approach to solving them
 In this pivotal step, you will expand on the real-world challenges uncovered in Step 3 through a comprehensive case study. Delve into specific instances where users encountered difficulties and showcase how the platform's unique features provided effective solutions. By dissecting the approach taken by the platform to overcome these challenges, you'll gain a deeper appreciation for the platform's user-centric design philosophy and how it shapes the schema design.
 
 Step 5: Schema Design Based on Top Features
 Based on the features you have identified, craft a schema design that reflects the platform's data structure. Focus on the key entities, attributes, and relationships that underpin the chosen features. Your schema should capture the essence of how the platform organises and utilises its data.
+
+
+
+
 
 Step 6: Rationale Behind the Design
 While creating the schema design, consider the rationale behind the platform's choices. Reflect on why certain entities and relationships were chosen and how they align with the platform's goals. This will help you understand the strategic decisions driving the schema's architecture.
@@ -29,22 +34,6 @@ Utilise tools like the Miro platform or similar applications to create an illust
 Step 8: Presentation of Findings
 Present your findings in a clear and concise manner. Showcase your understanding of how the schema design impacts the platform's functionality and user experience. Explain how your chosen features are integrated into the schema and how the schema's structure supports the platform's objectives.
 
-Task Details:
-
-Answer Submission: Your submission should include well-structured solutions for all provided questions related to product schema designs.
-
-Video Creation: Create an informative and engaging video where you thoroughly explain the Case Study.
-
-Depth and Clarity: Ensure your solutions are detailed and showcase your understanding of product schema design principles. Similarly, in the video, provide clear explanations that are easy to understand for a wide audience.
-
-Creativity Encouraged: You are welcome to utilise visuals, diagrams, or creative elements to enhance the clarity and impact of your explanations.
-
-Note:
-Duplicate this document and proceed to write your solutions and prepare your video.
-Include the video link in this document before final submission.
-
-
-Best of luck in completing this project and showcasing your prowess in dissecting and designing product schema for leading platforms! For reference, we have also conducted a case study on Instagram, which you can find below. This case study will provide you with valuable insights into how schema design plays a pivotal role in shaping the functionality and success of a prominent platform.
 
 Product Dissection for Instagram
 Company Overview:
@@ -172,8 +161,16 @@ Users like Posts – Users can like multiple posts, and each post can have multi
 Users follow other Users – Users can follow multiple users and be followed by multiple users.
 Posts have Hashtags – Posts can have multiple hashtags, and each hashtag can be associated with multiple posts.
 
+
+
+ER Diagram: 
+
+Let's construct an ER diagram that clearly depicts the relationships and attributes of the entities in the Instagram schema. This ER diagram will serve as a visual representation, showing the key components of Instagram's data model. By employing this diagram, you'll gain a clearer grasp of the intricate interactions and connections that define the platform's dynamics.
+
+
+
+
 Conclusion
 
 In this case study, we delved into the design of Instagram's schema and Entity-Relationship diagram. Instagram has revolutionised the way people share and engage with visual content, fostering connections and creative expression. The platform's intricate data model, consisting of entities like users, posts, comments, likes, followers, hashtags, and associations, forms the foundation for its seamless functionality. By understanding this schema, we gain insight into how Instagram effectively manages the complexities of user interactions and content sharing, contributing to its widespread popularity and continued growth in the world of social media.
-
 
