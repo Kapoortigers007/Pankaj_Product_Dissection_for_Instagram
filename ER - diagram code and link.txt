@@ -1,54 +1,97 @@
 ER - diagram link and code ----- https://dbdiagram.io/d/680b50121ca52373f554e708
 
+# Create ER Diagram (Vertical Layout)
+er = Digraph('Instagram_ER_Diagram', format='png')
+er.attr(rankdir='TB', size='20')
 
+# Function to create a vertical table
+def create_table(name, fields):
+    table = f'''<
+    <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+        <TR><TD BGCOLOR="lightblue"><B>{name}</B></TD></TR>
+    '''
+    for field in fields:
+        table += f'<TR><TD ALIGN="LEFT">{field}</TD></TR>'
+    table += '</TABLE>>'
+    return table
 
-code Table Users {
-  UserID int [pk, increment]
-  Username varchar(50) [not null, unique]
-  Email varchar(100) [not null, unique]
-  Full_Name varchar(100)
-  Bio text
-  Registration_Date date
-}
+# -------------------------
+# Table Entities
 
-Table Posts {
-  PostID int [pk, increment]
-  UserID int [ref: > Users.UserID]
-  Caption text
-  Image_URL varchar(255)
-  Location varchar(100)
-  Post_Date datetime
-}
+er.node('Users', create_table('Users', [
+    'UserID (PK)',
+    'Username',
+    'Email',
+    'FullName',
+    'Bio',
+    'JoinedDate'
+]))
 
-Table Comments {
-  CommentID int [pk, increment]
-  PostID int [ref: > Posts.PostID]
-  UserID int [ref: > Users.UserID]
-  Text text
-  Comment_Date datetime
-}
+er.node('Posts', create_table('Posts', [
+    'PostID (PK)',
+    'UserID (FK)',
+    'ImageURL',
+    'Caption',
+    'PostedDate'
+]))
 
-Table Likes {
-  LikeID int [pk, increment]
-  PostID int [ref: > Posts.PostID]
-  UserID int [ref: > Users.UserID]
-  Like_Date datetime
-}
+er.node('Comments', create_table('Comments', [
+    'CommentID (PK)',
+    'PostID (FK)',
+    'UserID (FK)',
+    'Text',
+    'CommentDate'
+]))
 
-Table Followers {
-  FollowerID int [pk, increment]
-  FollowingUserID int [ref: > Users.UserID]
-  FollowerUserID int [ref: > Users.UserID]
-  Follow_Date datetime
-}
+er.node('Likes', create_table('Likes', [
+    'LikeID (PK)',
+    'PostID (FK)',
+    'UserID (FK)',
+    'LikedDate'
+]))
 
-Table Hashtags {
-  HashtagID int [pk, increment]
-  Tag varchar(50) [not null, unique]
-}
+er.node('Follows', create_table('Follows', [
+    'FollowID (PK)',
+    'FollowingUserID (FK)',
+    'FollowerUserID (FK)',
+    'FollowDate'
+]))
 
-Table PostHashtags {
-  PostHashtagID int [pk, increment]
-  PostID int [ref: > Posts.PostID]
-  HashtagID int [ref: > Hashtags.HashtagID]
-}
+er.node('Hashtags', create_table('Hashtags', [
+    'HashtagID (PK)',
+    'Tag'
+]))
+
+er.node('PostHashtags', create_table('PostHashtags', [
+    'PostHashtagID (PK)',
+    'PostID (FK)',
+    'HashtagID (FK)'
+]))
+
+# Relationships
+# Users Relationships
+
+er.edge('Users', 'Posts', label='1:N')
+er.edge('Users', 'Comments', label='1:N')
+er.edge('Users', 'Likes', label='1:N')
+
+# Self Relationship (Follow)
+er.edge('Users', 'Follows', label='1:N (Following')
+er.edge('Users', 'Follows', label='1:N (Follower')
+er.edge('Users', 'Follows', label='1:N (Follow)')
+
+# Posts Relationships
+er.edge('Posts', 'Comments', label='1:N')
+er.edge('Posts', 'Likes', label='1:N')
+
+# Hashtag 1 to Many and Many-to-Many
+er.edge('Posts', 'PostHashtags', label='1:N')
+er.edge('Hashtags', 'PostHashtags', label='1:N')
+
+# Save Diagram
+er.render('Instagram_ER_Diagram_Final', cleanup=True)
+
+# Display Diagram in Colab Output
+display(Image('Instagram_ER_Diagram_Final.png'))
+
+er.save('Instagram_ER_Code_Final.dot')
